@@ -117,4 +117,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+# When you deploy your application, we run 'python manage.py collecstatics' and if it has a static folder,
+# it will collect and put the files into a folder in the ROOT.
+# WE DEFINE THE NAME OF THE FOLDER HERE:
+STATIC_ROOT= os.path.join(BASE_DIR, 'static') # make sure to .gitignore this folder
+# URL for us to access the files
 STATIC_URL = '/static/'
+# location of the static folder THAT WE ARE GOING TO USE. e.g: inside the Root project
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'RealState/static')
+]
