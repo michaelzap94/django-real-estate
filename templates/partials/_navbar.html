@@ -39,7 +39,7 @@
           </li>
         </ul>
 
-        <ul class="navbar-nav ml-auto">
+        {% comment %} <ul class="navbar-nav ml-auto">
           {% if user.is_authenticated %}
             <li
             {% if 'dashboard' in request.path %}
@@ -84,7 +84,7 @@
                 Login</a>
             </li>
           {% endif %}
-        </ul>
+        </ul> {% endcomment %}
       </div>
     </div>
   </nav>
