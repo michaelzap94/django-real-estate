@@ -2,11 +2,14 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from .models import Listing
+from listings.choices import price_choices,
 # Create your views here.
 def index(request):
     # get an object using its id ALTERNATIVE TO:     product = get_object_or_404(Product, pk=id)
     try:
-        allListings = Listing.objects.all()
+        # allListings = Listing.objects.all()
+        # Order by list_date in '-' desc order and filter by is_published=True
+        allListings = Listing.objects.order_by('-list_date').filter(is_published=True)
 
         # PAGINATOR #
         paginator = Paginator(allListings, 2)# 2 elements per page
