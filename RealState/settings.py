@@ -141,3 +141,4 @@ STATICFILES_DIRS = [
 # Images|media added during runtime.
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
